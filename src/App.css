@@ -96,6 +96,14 @@
   color: #E60023;
 }
 
+.message-icon {
+  color: #53d769;
+}
+
+.message-icon:hover {
+  color: #f83107 !important;
+}
+
 .facebook-icon:hover {
   color: #F83107 !important;
 }

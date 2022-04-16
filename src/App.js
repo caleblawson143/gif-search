@@ -4,8 +4,8 @@ import './components/SearchBox';
 import './App.css';
 import SearchBox from './components/SearchBox';
 import GifBox from './components/GifBox';
-import 'font-awesome/css/font-awesome.min.css'
-import { faFacebook, faTwitter, faReddit, faFacebookMessenger } from '@fortawesome/free-brands-svg-icons'
+import { faFacebook, faTwitter, faReddit } from '@fortawesome/free-brands-svg-icons'
+import {faMessage} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BeatLoader from "react-spinners/BeatLoader";
 
@@ -120,6 +120,7 @@ class App extends React.Component {
               {}
               <div className='social-btns'>
                 <a href={"http://www.facebook.com/sharer/sharer.php?u=" + this.state.gifSource}><FontAwesomeIcon icon={faFacebook} id="social-icon"className="facebook-icon"></FontAwesomeIcon></a>
+                <a href={"messages://" + this.state.gifSource}><FontAwesomeIcon icon={faMessage} id="social-icon"className="message-icon"></FontAwesomeIcon></a>
                 <a href={"https://twitter.com/intent/tweet?url=" + this.state.gifSource}><FontAwesomeIcon icon={faTwitter} id="social-icon"className="twitter-icon"></FontAwesomeIcon></a>
                 <a href={"https://www.reddit.com/submit?url=" + this.state.gifSource}><FontAwesomeIcon icon={faReddit} id="social-icon"className="reddit-icon"></FontAwesomeIcon></a>
               </div>
