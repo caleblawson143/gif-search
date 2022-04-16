@@ -145,7 +145,7 @@
 
 .search-box {
   height: 50px;
-  width: 500px;
+  width: 25vw;
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
@@ -161,7 +161,7 @@
 .search-box:focus {
   border-radius: 10px;
   height: 60px;
-  width: 550px;
+  width: 27vw;
   font-size: 30px;
 }
 
