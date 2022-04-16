@@ -18,6 +18,7 @@
 .modal-box-gif {
   position: fixed;
   padding: 5px 20px 20px 20px;
+  width: 100vw;
   top: 0;
   left: 0;
   text-align: center;
@@ -46,8 +47,8 @@
 }
 
 .modal-gif {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   position: relative;
   top: 25%;
 }
@@ -249,4 +250,33 @@
   cursor: pointer;
   transform: scale(0.93);
   opacity: .6;
+}
+
+.gif:focus {
+  border: solid white 2px;
+}
+
+@media only screen and (max-width: 800px) {
+  .search-box {
+    width: 200px !important;
+    font-size: 14px !important;
+  }
+
+  .search-box::placeholder{
+    font-size: 14px !important;
+  }
+
+  .search-box:focus::placeholder {
+    font-size: 14px !important;
+  }
+
+  .search-box:focus {
+    width: 200px !important;
+    height: 50px !important;
+    font-size: 15px !important;
+  }
+
+  .modal-box-gif {
+    visibility: hidden !important;
+  }
 }
