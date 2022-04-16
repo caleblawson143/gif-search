@@ -67,7 +67,7 @@ class App extends React.Component {
 
   assignGifs() {
     this.state.rawData.forEach(i => {
-      gifArr.push(i.images.downsized.url)
+      gifArr.push(i.images.downsized_small.mp4)
     })
     gifArr.forEach(i => {
       gifBoxArr.push(<GifBox src={i} className={"gif"} key={"gif-" + gifArr.indexOf(i)} onClick={(src) => this.handleClickGif(src)}></GifBox>)
@@ -76,9 +76,10 @@ class App extends React.Component {
   }
 //Function is called when user clicks on any gif
   handleClickGif(src) {
+    console.log(src)
     this.setState({
       displayModal: true,
-      gifSource: src.target.src,
+      gifSource: src.target.currentSrc,
       gifSelected: true
     })
   }
@@ -100,6 +101,16 @@ class App extends React.Component {
     }
   }
 
+  randomGifsDiv() {
+    return (
+      <div>
+        <img src={this.state.finalDataRandom[0]} className="gif" onClick={(src) => this.handleClickGif(src)}></img>
+        <img src={this.state.finalDataRandom[1]} className="gif" onClick={(src) => this.handleClickGif(src)}></img>
+        <img src={this.state.finalDataRandom[2]} className="gif" onClick={(src) => this.handleClickGif(src)}></img>
+      </div>
+    )
+  }
+
   render() {
     var displayModal = this.state.displayModal;
     var isLoading = this.state.isLoading;
@@ -113,7 +124,7 @@ class App extends React.Component {
           <div>
             <div className='modal-box-gif'>
               <h2>Gif Selected:</h2>
-              <a href={this.state.gifSource}><img className="modal-gif" src={this.state.gifSource}></img></a>
+              <a href={this.state.gifSource}><GifBox className="modal-gif" src={this.state.gifSource}></GifBox></a>
             </div>
 
             <div className="modal-box">
@@ -149,12 +160,7 @@ class App extends React.Component {
         {isLoading ? <div className='loading'><div className="load-animation"><BeatLoader color={color} size={50}></BeatLoader></div></div> : ''}
           <div className='gifs-container'>
           {isLoading ? '' : this.state.finalData}
-          {searched ? '' : 
-          <div>
-            <GifBox src={this.state.finalDataRandom[0]} className="gif" onClick={(src) => this.handleClickGif(src)}></GifBox>
-            <GifBox src={this.state.finalDataRandom[1]} className="gif" onClick={(src) => this.handleClickGif(src)}></GifBox>
-            <GifBox src={this.state.finalDataRandom[2]} className="gif" onClick={(src) => this.handleClickGif(src)}></GifBox>
-          </div>}
+          {searched ? '' : this.randomGifsDiv()}
           </div>
         </div>
       </div>
