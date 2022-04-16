@@ -137,7 +137,7 @@
 .search {
   text-align: center;
   min-height: 500px;
-  background: url('/public/background.jpg');
+  background: url('/public/background-min.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
