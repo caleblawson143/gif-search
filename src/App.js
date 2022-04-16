@@ -119,8 +119,7 @@ class App extends React.Component {
             <div className="modal-box">
               {}
               <div className='social-btns'>
-                <a href={"messages://redirect/" + this.state.gifSource}><FontAwesomeIcon icon={faFacebook} id="social-icon"className="facebook-icon"></FontAwesomeIcon></a>
-                <a href={"http://www.facebook.com/sharer/sharer.php?u=" + this.state.gifSource}><FontAwesomeIcon icon={faFacebookMessenger} id="social-icon"className="facebook-icon"></FontAwesomeIcon></a>
+                <a href={"http://www.facebook.com/sharer/sharer.php?u=" + this.state.gifSource}><FontAwesomeIcon icon={faFacebook} id="social-icon"className="facebook-icon"></FontAwesomeIcon></a>
                 <a href={"https://twitter.com/intent/tweet?url=" + this.state.gifSource}><FontAwesomeIcon icon={faTwitter} id="social-icon"className="twitter-icon"></FontAwesomeIcon></a>
                 <a href={"https://www.reddit.com/submit?url=" + this.state.gifSource}><FontAwesomeIcon icon={faReddit} id="social-icon"className="reddit-icon"></FontAwesomeIcon></a>
               </div>
